@@ -3,12 +3,15 @@
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="icon" type="image/x-icon" href="/pokeball_favicon.ico">
     <link rel="stylesheet" href="style.css" />
     <title>Pokedex</title>
   </head>
   <body>
     <h1>Pokedex</h1>
-    <div class="poke-container" id="poke-container"></div>
+    <input id="searchbar" type="text" placeholder="Search..." list="poke-name-list"/>
+    <datalist id="poke-name-list"></datalist>
+    <div id="poke-container"></div>
 
     <!-- Design inspired by this Dribbble shot: https://dribbble.com/shots/5611109--Pokemon -->
     <script src="script.js"></script>
