@@ -51,27 +51,27 @@ const createPokemonCard = (pokemon) => {
     const type = main_types.find(type => poke_types.indexOf(type) > -1)
     const color = colors[type]
 
-    //pokemonEl.style.backgroundColor = color
-
     const pokemonInnerHTML = `
     <div class="card">
         <div class="front face">
             <div class="img-container">
-                    <span>
-                        <div class="type-bg">
-                            <img src="./images/${type}.svg"/>
-                        </div>
-                        <img class="poke-img" 
-                        src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" alt="${name}">
-                    </span>
+                <div class="type-bg">
+                    <img class="type-bg" src="./images/${type}.svg"/>
                 </div>
+                <div class="poke-img">
+                    <img src="https://raw.githubusercontent.com/PokeAPI/sprites/master/sprites/pokemon/other/official-artwork/${pokemon.id}.png" alt="${name}">
+                </div>
+            </div>
 
-                <div class="info">
-                    <span class="number">#${id}</span>
-                    <h3 class="name">${name}</h3>
-                </div>
+            <div class="info">
+                <span class="number">#${id}</span>
+                <h3 class="name">${name}</h3>
+            </div>
         </div>
-            <div class="back face"><p class="type">Type: <span>${type}</span> </p></div>
+
+        <div class="back face">
+            <p class="type">Type: <span>${type}</span> </p>
+        </div>
     </div>
     `
     /**
@@ -128,7 +128,6 @@ function search(value)
 function flipCard(value)
 {
     value.firstElementChild.classList.contains('flipped') ? value.firstElementChild.classList.remove('flipped') : value.firstElementChild.classList.add('flipped')
-
 }
 
 fetchPokemons()
