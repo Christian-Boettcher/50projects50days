@@ -5,12 +5,29 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <link rel="icon" type="image/x-icon" href="/pokeball_favicon.ico">
     <link rel="stylesheet" href="style.css" />
-    <title>Pokedex</title>
+    <title>Pokédex</title>
   </head>
   <body>
-    <h1 id="title">Pokedex</h1>
-    <input id="searchbar" type="text" placeholder="Search..." list="poke-name-list"/>
+      <h1 id="title">Pokédex</h1>
+
+      <div class="toggle-switch-container">
+        <div class="toggle-switch switch-vertical">
+          <input id="pokeToggle" type="checkbox" name="switch" tabindex="1"/>
+          <label for="pokeToggle">Comfortable</label>
+          <span class="toggle-outside">
+            <span class="toggle-inside_top"></span>
+            <span class="toggle-inside_bottom"></span>
+            <span class="front-button"></span>
+          </span>
+        </div>
+      </div>
+
+    <input id="searchbar" type="search" placeholder="Search..." list="poke-name-list" tabindex="2"/>
     <datalist id="poke-name-list"></datalist>
+    <div class="slidecontainer" id="slidecontainer">
+      <input type="range" value="151" class="pokeRange" id="pokeRange" oninput="setPokeRange(this)" tabindex="3"/>
+      <input type="number" class="sliderInputText" id="sliderInputText" size="3" step="1" maxlength="3" onchange="setPokeRange(this)" tabindex="4"/>
+    </div>
     <div id="poke-container"></div>
 
     <!-- Design inspired by this Dribbble shot: https://dribbble.com/shots/5611109--Pokemon -->
